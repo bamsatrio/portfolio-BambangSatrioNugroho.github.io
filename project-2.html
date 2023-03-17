@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Case Study of Project 2</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/bb1.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Bambang Satrio Nugroho</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Project 2</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Aplikasi Pencarian Lokasi Pelayanan Kesehatan Terdekat Berbasis Android Berbantuan Api Google Maps Menggunakan Formila Haversine
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="content-slide">
+            <div class="imgslide fade" style="text-align: center;">
+                <div class="numberslide">1 / 6</div>
+                <img src="./assets/jpeg/ss2.png" alt="">
+            </div>
+            <div class="imgslide fade" style="text-align: center">
+                <div class="numberslide">2 / 6</div>
+                <img src="./assets/jpeg/ss21.png" alt="">
+            </div>
+            <div class="imgslide fade" style="text-align: center">
+                <div class="numberslide">3 / 6</div>
+                <img src="./assets/jpeg/ss22.png" alt="">
+            </div>
+            <div class="imgslide fade" style="text-align: center">
+                <div class="numberslide">4 / 6</div>
+                <img src="./assets/jpeg/ss23.png" alt="">
+            </div>
+            <div class="imgslide fade" style="text-align: center">
+                <div class="numberslide">5 / 6</div>
+                <img src="./assets/jpeg/ss24.png" alt="">
+            </div>
+            <div class="imgslide fade" style="text-align: center">
+                <div class="numberslide">6 / 6</div>
+                <img src="./assets/jpeg/ss25.png" alt="">
+            </div>
+             <a class="prev" onClick="nextslide(-1)">&#10094;</a>
+            <a class="next" onClick="nextslide(1)">&#10095;</a> 
+        </div>
+
+        <div class="page">
+            <span class="dot" onClick="dotslide(1)"></span>
+            <span class="dot" onClick="dotslide(2)"></span>
+            <span class="dot" onClick="dotslide(3)"></span>
+            <span class="dot" onClick="dotslide(4)"></span>
+            <span class="dot" onClick="dotslide(5)"></span>
+            <span class="dot" onClick="dotslide(6)"></span>
+        </div>
+        <script>
+        var slideIndex = 1;
+            showSlide(slideIndex);
+
+        function nextslide(n){
+            showSlide(slideIndex += n);
+        }
+
+        function dotslide(n){
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("imgslide");
+            var dot = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                
+                dot[i].className = dot[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            dot[slideIndex - 1].className += " active";
+            
+
+
+        }
+    </script>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+               Aplikasi Pencarian Lokasi Pelayanan Kesehatan Terdekat Berbasis Android Berbantuan Api Google Maps Menggunakan Formula Haversine dibuat sebagai alternatif untuk pencarian lokasi pelayanan kesehatan terdekat. Aplikasi ini dibuat menggunakan Android Studio dengan bahasa pemrograman kotlin serta formula haversine sebagai pengukur jarak dari lokasi pengguna ke lokasi pelayanan kesehatan terdekat. Proses pembuatan aplikasi dimulai dengan merancang flowchart, lalu merancang struktur navigasi, merancang UML yang menggambarkan secara singkat proses pada aplikasi serta merancang tampilan program. Setelah aplikasi dibuat selanjutnya aplikasi diuji coba menggunakan 2 metode yaitu metode Black Box dan metode User Acceptance Test untuk mengetahui kesalahan yang tidak terdeteksi pada pengujian Black Box dan untuk mendapatkan respon dari responden terhadap aplikasi dari segi tampilan, navigasi dan kegunaan. Berdasarkan hasil uji coba pada metode Black Box didapat hasil bahwa semua fungsi pada aplikasi sudah berjalan dengan baik dan benar. Sedangkan berdasarkan hasil uji coba menggunakan metode User Acceptance Test dengan membagikan kuesioner kepada 30 responden dimana kuesioner berisi pertanyaan mengenai aplikasi dan mendapatkan hasil presentase nilai rata-rata sebesar 87,08% kemudian disimpulkan berdasarkan nilai tersebut bahwa aplikasi sudah sangat baik
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">Kotlin</div>
+                <div class="skills__skill">XML</div>
+                <div class="skills__skill">Haversine</div>
+                <div class="skills__skill">Google Map API</div>
+                <div class="skills__skill">Google Place API</div>
+                <div class="skills__skill">Google Geolocation API</div>
+                <div class="skills__skill">MVVM</div>
+                <div class="skills__skill">Android Studio</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Code</h3>
+              <a
+                href="https://github.com/bamsatrio/aplikasi-pencarian-lokasi-pelayanan-kesehatan"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code Link</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h4 class="heading heading-sm text-lt">Bambang Satrio Nugroho</h4>
+          </div>
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/bamsatrio/">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png" style="margin: auto" "display: inline-block;"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/bamsatrio">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png" style="margin: auto" "display: inline-block;"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/bamsatrio/">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png" style="margin: auto" "display: inline-block;"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
